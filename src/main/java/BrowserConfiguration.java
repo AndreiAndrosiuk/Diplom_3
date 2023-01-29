@@ -1,7 +1,7 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Configuration {
+public class BrowserConfiguration {
     public static WebDriver getBrowser() {
         String browserName;
         try {

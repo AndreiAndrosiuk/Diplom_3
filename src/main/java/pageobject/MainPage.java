@@ -9,40 +9,43 @@ public class MainPage {
 
     private WebDriver driver;
 
-    public final String URL = "https://stellarburgers.nomoreparties.site";
+    private static final String URL = "https://stellarburgers.nomoreparties.site";
 
     //Локатор хедера
-    public final By header = By.xpath("//h1");
+    private final By header = By.xpath("//h1");
 
     //Локатор кнопки "Личный кабинет"
-    public final By profileButton = By.xpath("//p[text()='Личный Кабинет']");
+    private final By profileButton = By.xpath("//p[text()='Личный Кабинет']");
 
     //Локатор кнопки "Войти в аккаунт"
-    public final By loginButton = By.xpath("//button[text()='Войти в аккаунт']");
+    private final By loginButton = By.xpath("//button[text()='Войти в аккаунт']");
 
     //Локатор кнопки "Булки"
-    public final By bunButton = By.xpath("//span[text()='Булки']");
+    private final By bunButton = By.xpath("//span[text()='Булки']");
 
     //Локатор заголовка "Булки"
-    public final By bunHeader = By.xpath("//h2[text()='Булки']");
+    private final By bunHeader = By.xpath("//h2[text()='Булки']");
 
     //Локатор кнопки "Соусы"
-    public final By sauceButton = By.xpath("//span[text()='Соусы']");
+    private final By sauceButton = By.xpath("//span[text()='Соусы']");
 
     //Локатор заголовка "Соусы"
-    public final By sauceHeader = By.xpath("//h2[text()='Соусы']");
+    private final By sauceHeader = By.xpath("//h2[text()='Соусы']");
 
     //Локатор кнопки "Начинки"
-    public final By fillingButton = By.xpath("//span[text()='Начинки']");
+    private final By fillingButton = By.xpath("//span[text()='Начинки']");
 
     //Локатор заголовка "Начинки"
-    public final By fillingHeader = By.xpath("//h2[text()='Начинки']");
+    private final By fillingHeader = By.xpath("//h2[text()='Начинки']");
+
+    //Локатор для активной секции
+    private final By activeSection = By.xpath("//div[@class='tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect']");
 
     //Локатор кнопки "Оформить заказ"
-    public final By orderButton = By.xpath("//button[text()='Оформить заказ']");
+    private final By orderButton = By.xpath("//button[text()='Оформить заказ']");
 
     //Локатор описания конструктора "Собери бургер"
-    public final By createBurgerDescription = By.xpath("//h1[text()='Соберите бургер']");
+    private final By createBurgerDescription = By.xpath("//h1[text()='Соберите бургер']");
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
@@ -84,22 +87,21 @@ public class MainPage {
         return this;
     }
 
-    public MainPage checkBunSection() {
+    public MainPage checkActiveBunSection() {
         new WebDriverWait(driver, 10)
-                .until(ExpectedConditions.visibilityOfElementLocated(bunHeader));
+                .until(ExpectedConditions.textToBePresentInElementLocated(activeSection, "Булки"));
         return this;
     }
 
-    public MainPage checkSauceSection() {
+    public MainPage checkActiveSauceSection() {
         new WebDriverWait(driver, 10)
-                .until(ExpectedConditions.visibilityOfElementLocated(sauceHeader));
+                .until(ExpectedConditions.textToBePresentInElementLocated(activeSection, "Соусы"));
         return this;
     }
 
-    public MainPage checkFillingSection() {
+    public MainPage checkActiveFillingSection() {
         new WebDriverWait(driver, 10)
-                .until(ExpectedConditions.visibilityOfElementLocated(fillingHeader));
+                .until(ExpectedConditions.textToBePresentInElementLocated(activeSection, "Начинки"));
         return this;
     }
-
 }

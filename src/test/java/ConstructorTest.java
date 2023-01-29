@@ -4,41 +4,42 @@ import org.junit.Before;
 import org.junit.Test;
 import pageobject.MainPage;
 
-public class ConstructorTest extends Setup{
+public class ConstructorTest extends Setup {
 
     @Before
     public void begin() {
         driverSetUp();
         driver.manage().window().maximize();
     }
+
     @After
     public void teardown() {
         driver.close();
     }
 
     @Test
-    @DisplayName("Переход в раздел Булки")
-    public void checkBunSection(){
+    @DisplayName("Проверка исходного состояния страницы")
+    public void checkBunSection() {
         MainPage mainPage = new MainPage(driver);
         driver.get("https://stellarburgers.nomoreparties.site");
-        mainPage.checkBunSection();
+        mainPage.checkActiveBunSection();
     }
 
     @Test
     @DisplayName("Переход в раздел Соусы")
-    public void checkSauceSection(){
+    public void checkSauceSection() {
         MainPage mainPage = new MainPage(driver);
         driver.get("https://stellarburgers.nomoreparties.site");
         mainPage.clickSauceButton();
-        mainPage.checkSauceSection();
+        mainPage.checkActiveSauceSection();
     }
 
     @Test
     @DisplayName("Переход в раздел Начинки")
-    public void checkFillingSection(){
+    public void checkFillingSection() {
         MainPage mainPage = new MainPage(driver);
         driver.get("https://stellarburgers.nomoreparties.site");
         mainPage.clickFillingButton();
-        mainPage.checkFillingSection();
+        mainPage.checkActiveFillingSection();
     }
 }

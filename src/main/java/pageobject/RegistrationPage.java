@@ -9,25 +9,25 @@ public class RegistrationPage {
 
     private WebDriver driver;
 
-    private String URL = "https://stellarburgers.nomoreparties.site/register";
+    private static final String URL = "https://stellarburgers.nomoreparties.site/register";
 
     //Локатор для поля Имя
-    public final By nameField = By.xpath(".//fieldset[1]//input");
+    private final By nameField = By.xpath(".//fieldset[1]//input");
 
     //Локатор для поля Email
-    public final By emailField = By.xpath(".//fieldset[2]//input");
+    private final By emailField = By.xpath(".//fieldset[2]//input");
 
     //Локатор для поля Пароль
-    public final By passwordField = By.xpath(".//fieldset[3]//input");
+    private final By passwordField = By.xpath(".//fieldset[3]//input");
 
     //Локатор для кнопки "Зарегистрироваться"
-    public final By registrationButton = By.xpath(".//button[text() = 'Зарегистрироваться']");
+    private final By registrationButton = By.xpath(".//button[text() = 'Зарегистрироваться']");
 
     //Локатор для гиперссылки "Войти"
-    public final By loginButtonLink = By.linkText("Войти");
+    private final By loginButtonLink = By.linkText("Войти");
 
     //Локатор для ошибки "Некорректный пароль"
-    public final By errorPassword = By.xpath(".//div//p[text()= 'Некорректный пароль']");
+    private final By errorPassword = By.xpath(".//div//p[text()= 'Некорректный пароль']");
 
     public RegistrationPage(WebDriver driver) {
         this.driver = driver;
