@@ -4,6 +4,8 @@ import org.junit.Before;
 import org.junit.Test;
 import pageobject.MainPage;
 
+import static config.Urls.MAIN_PAGE_URL;
+
 public class ConstructorTest extends Setup {
 
     @Before
@@ -21,7 +23,7 @@ public class ConstructorTest extends Setup {
     @DisplayName("Проверка исходного состояния страницы")
     public void checkBunSection() {
         MainPage mainPage = new MainPage(driver);
-        driver.get("https://stellarburgers.nomoreparties.site");
+        driver.get(MAIN_PAGE_URL);
         mainPage.checkActiveBunSection();
     }
 
@@ -29,7 +31,7 @@ public class ConstructorTest extends Setup {
     @DisplayName("Переход в раздел Соусы")
     public void checkSauceSection() {
         MainPage mainPage = new MainPage(driver);
-        driver.get("https://stellarburgers.nomoreparties.site");
+        driver.get(MAIN_PAGE_URL);
         mainPage.clickSauceButton();
         mainPage.checkActiveSauceSection();
     }
@@ -38,7 +40,7 @@ public class ConstructorTest extends Setup {
     @DisplayName("Переход в раздел Начинки")
     public void checkFillingSection() {
         MainPage mainPage = new MainPage(driver);
-        driver.get("https://stellarburgers.nomoreparties.site");
+        driver.get(MAIN_PAGE_URL);
         mainPage.clickFillingButton();
         mainPage.checkActiveFillingSection();
     }

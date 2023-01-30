@@ -9,6 +9,8 @@ import pageobject.ProfilePage;
 import userinfo.User;
 import userinfo.UserClient;
 
+import static config.Urls.LOGIN_PAGE_URL;
+
 public class RedirectProfileTest extends Setup {
 
     User user = new User();
@@ -40,8 +42,7 @@ public class RedirectProfileTest extends Setup {
         MainPage mainPage = new MainPage(driver);
         LoginPage loginPage = new LoginPage(driver);
         ProfilePage profilePage = new ProfilePage(driver);
-        driver.get("https://stellarburgers.nomoreparties.site/login");
-        loginPage.clickLoginButton();
+        driver.get(LOGIN_PAGE_URL);
         loginPage.setEmail(user.getEmail());
         loginPage.setPassword(user.getPassword());
         loginPage.clickLoginButton();
@@ -56,8 +57,7 @@ public class RedirectProfileTest extends Setup {
         MainPage mainPage = new MainPage(driver);
         LoginPage loginPage = new LoginPage(driver);
         ProfilePage profilePage = new ProfilePage(driver);
-        driver.get("https://stellarburgers.nomoreparties.site/login");
-        loginPage.clickLoginButton();
+        driver.get(LOGIN_PAGE_URL);
         loginPage.setEmail(user.getEmail());
         loginPage.setPassword(user.getPassword());
         loginPage.clickLoginButton();

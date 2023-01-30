@@ -9,6 +9,8 @@ import pageobject.ProfilePage;
 import userinfo.User;
 import userinfo.UserClient;
 
+import static config.Urls.MAIN_PAGE_URL;
+
 public class ProfileTest extends Setup {
     User user = new User();
     UserClient userClient = new UserClient();
@@ -39,7 +41,7 @@ public class ProfileTest extends Setup {
         MainPage mainPage = new MainPage(driver);
         LoginPage loginPage = new LoginPage(driver);
         ProfilePage profilePage = new ProfilePage(driver);
-        driver.get("https://stellarburgers.nomoreparties.site");
+        driver.get(MAIN_PAGE_URL);
         mainPage.clickLoginButton();
         loginPage.setEmail(user.getEmail());
         loginPage.setPassword(user.getPassword());

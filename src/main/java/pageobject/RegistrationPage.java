@@ -9,8 +9,6 @@ public class RegistrationPage {
 
     private WebDriver driver;
 
-    private static final String URL = "https://stellarburgers.nomoreparties.site/register";
-
     //Локатор для поля Имя
     private final By nameField = By.xpath(".//fieldset[1]//input");
 
@@ -47,10 +45,6 @@ public class RegistrationPage {
 
     public void clickRegistrationButton() {
         driver.findElement(registrationButton).click();
-    }
-
-    public String getUrl() {
-        return URL;
     }
 
     public void clickLoginButton() {

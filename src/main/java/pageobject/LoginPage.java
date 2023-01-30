@@ -9,8 +9,6 @@ public class LoginPage {
 
     private WebDriver driver;
 
-    private static final String URL = "https://stellarburgers.nomoreparties.site/login";
-
     //Локатор для поля Email
     private final By emailField = By.xpath(".//fieldset[1]//input");
 
@@ -31,10 +29,6 @@ public class LoginPage {
         new WebDriverWait(driver, 10)
                 .until(ExpectedConditions.elementToBeClickable(loginButton));
         return this;
-    }
-
-    public String getUrl() {
-        return URL;
     }
 
     public void setEmail(String email) {

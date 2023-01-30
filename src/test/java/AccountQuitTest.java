@@ -9,6 +9,7 @@ import pageobject.ProfilePage;
 import userinfo.User;
 import userinfo.UserClient;
 
+import static config.Urls.LOGIN_PAGE_URL;
 import static org.junit.Assert.assertEquals;
 
 public class AccountQuitTest extends Setup {
@@ -41,7 +42,7 @@ public class AccountQuitTest extends Setup {
         MainPage mainPage = new MainPage(driver);
         LoginPage loginPage = new LoginPage(driver);
         ProfilePage profilePage = new ProfilePage(driver);
-        driver.get("https://stellarburgers.nomoreparties.site/login");
+        driver.get(LOGIN_PAGE_URL);
         loginPage.setEmail(user.getEmail());
         loginPage.setPassword(user.getPassword());
         loginPage.clickLoginButton();
@@ -49,6 +50,6 @@ public class AccountQuitTest extends Setup {
         profilePage.checkDescriptionProfilePage();
         profilePage.clickExitButton();
         loginPage.checkClickableLoginButton();
-        assertEquals(loginPage.getUrl(), driver.getCurrentUrl());
+        assertEquals(LOGIN_PAGE_URL, driver.getCurrentUrl());
     }
 }

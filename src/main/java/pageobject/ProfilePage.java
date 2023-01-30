@@ -9,8 +9,6 @@ public class ProfilePage {
 
     private WebDriver driver;
 
-    private static final String URL = "https://stellarburgers.nomoreparties.site/account/profile";
-
     //Локатор кнопки "Выход"
     private final By exitButton = By.xpath("//button[text()='Выход']");
 
@@ -31,10 +29,6 @@ public class ProfilePage {
         new WebDriverWait(driver, 10)
                 .until(ExpectedConditions.visibilityOfElementLocated(descriptionProfilePage));
         return this;
-    }
-
-    public String getUrl() {
-        return URL;
     }
 
     public void clickExitButton() {

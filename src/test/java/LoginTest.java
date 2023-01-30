@@ -7,6 +7,7 @@ import pageobject.*;
 import userinfo.User;
 import userinfo.UserClient;
 
+import static config.Urls.*;
 import static org.junit.Assert.assertEquals;
 
 public class LoginTest extends Setup {
@@ -39,9 +40,9 @@ public class LoginTest extends Setup {
     public void loginOnMainPageTest() {
         LoginPage loginPage = new LoginPage(driver);
         MainPage mainPage = new MainPage(driver);
-        driver.get("https://stellarburgers.nomoreparties.site");
+        driver.get(MAIN_PAGE_URL);
         mainPage.clickLoginButton();
-        assertEquals(loginPage.getUrl(), driver.getCurrentUrl());
+        assertEquals(LOGIN_PAGE_URL, driver.getCurrentUrl());
         loginPage.setEmail(user.getEmail());
         loginPage.setPassword(user.getPassword());
         loginPage.clickLoginButton();
@@ -53,9 +54,9 @@ public class LoginTest extends Setup {
     public void loginOnProfilePageTest() {
         LoginPage loginPage = new LoginPage(driver);
         MainPage mainPage = new MainPage(driver);
-        driver.get("https://stellarburgers.nomoreparties.site");
+        driver.get(MAIN_PAGE_URL);
         mainPage.clickProfileButton();
-        assertEquals(loginPage.getUrl(), driver.getCurrentUrl());
+        assertEquals(LOGIN_PAGE_URL, driver.getCurrentUrl());
         loginPage.setEmail(user.getEmail());
         loginPage.setPassword(user.getPassword());
         loginPage.clickLoginButton();
@@ -68,9 +69,9 @@ public class LoginTest extends Setup {
         LoginPage loginPage = new LoginPage(driver);
         RegistrationPage registrationPage = new RegistrationPage(driver);
         MainPage mainPage = new MainPage(driver);
-        driver.get("https://stellarburgers.nomoreparties.site/register");
+        driver.get(REGISTRATION_PAGE_URL);
         registrationPage.clickLoginButton();
-        assertEquals(loginPage.getUrl(), driver.getCurrentUrl());
+        assertEquals(LOGIN_PAGE_URL, driver.getCurrentUrl());
         loginPage.setEmail(user.getEmail());
         loginPage.setPassword(user.getPassword());
         loginPage.clickLoginButton();
@@ -84,9 +85,9 @@ public class LoginTest extends Setup {
         LoginPage loginPage = new LoginPage(driver);
         ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage(driver);
         MainPage mainPage = new MainPage(driver);
-        driver.get("https://stellarburgers.nomoreparties.site/forgot-password");
+        driver.get(FORGOT_PASSWORD_PAGE_URL);
         forgotPasswordPage.clickLoginButton();
-        assertEquals(loginPage.getUrl(), driver.getCurrentUrl());
+        assertEquals(LOGIN_PAGE_URL, driver.getCurrentUrl());
         loginPage.setEmail(user.getEmail());
         loginPage.setPassword(user.getPassword());
         loginPage.clickLoginButton();

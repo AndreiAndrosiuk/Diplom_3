@@ -7,8 +7,6 @@ public class ForgotPasswordPage {
 
     private WebDriver driver;
 
-    private static final String URL = "https://stellarburgers.nomoreparties.site/forgot-password";
-
     //Локатор для кнопки "Войти"
     private final By loginButton = By.xpath("//a[text()='Войти']");
 
@@ -17,10 +15,6 @@ public class ForgotPasswordPage {
 
     public ForgotPasswordPage(WebDriver driver) {
         this.driver = driver;
-    }
-
-    public String getUrl() {
-        return URL;
     }
 
     public void clickLoginButton() {

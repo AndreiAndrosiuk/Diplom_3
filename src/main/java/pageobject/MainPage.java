@@ -9,8 +9,6 @@ public class MainPage {
 
     private WebDriver driver;
 
-    private static final String URL = "https://stellarburgers.nomoreparties.site";
-
     //Локатор хедера
     private final By header = By.xpath("//h1");
 
@@ -49,10 +47,6 @@ public class MainPage {
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
-    }
-
-    public String getUrl() {
-        return URL;
     }
 
     public void clickLoginButton() {
